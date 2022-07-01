@@ -1,6 +1,8 @@
 from random import choice
 from typing import List, NoReturn, Callable, Optional
 
+from constant import HANGMAN_LIST, WORLDS_LIST
+
 
 class Gallows:
     def __init__(self, words: List[str], hangman: List[str]):
@@ -71,75 +73,11 @@ class Gallows:
 
 
 if __name__ == "__main__":
-    words_list: List[str] = [
-        'Компьютер',
-        'Телефон',
-    ]
-
-    hangman_list: List[str] = [
-        """
-         +-----+
-               |
-               |
-               |
-               |
-        ========
-        """,
-        """
-         +-----+
-         |     |
-         o     |
-               |
-               |
-        ========
-        """,
-        """
-         +-----+
-         |     |
-         o     |
-         |     |
-               |
-        ========
-        """,
-        """
-         +-----+
-         |     |
-         o     |
-        /|     |
-               |
-        ========
-        """,
-        """
-         +-----+
-         |     |
-         o     |
-        /|\    |
-               |
-        ========
-        """,
-        """
-         +-----+
-         |     |
-         o     |
-        /|\    |
-        /      |
-        ========
-        """,
-        """
-         +-----+
-         |     |
-         o     |
-        /|\    |
-        / \    |
-        ========
-        """,
-    ]
-
-    game = Gallows(words_list, hangman_list)
+    game = Gallows(WORLDS_LIST, HANGMAN_LIST)
     game.choice_word()
 
     print(game.get_word())
-    print(hangman_list[0])
+    print(HANGMAN_LIST[0])
 
     run: bool = True
     while run:
